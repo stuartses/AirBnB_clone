@@ -58,10 +58,9 @@ class TestCity(unittest.TestCase):
         z = City()
         self.assertTrue(hasattr(z, "name"))
         self.assertTrue(hasattr(z, "state_id"))
-        self.assertTrue( "id" in z.__dict__)
-        self.assertTrue( "created_at" in z.__dict__)
-        self.assertTrue( "updated_at" in z.__dict__)
-
+        self.assertTrue("id" in z.__dict__)
+        self.assertTrue("created_at" in z.__dict__)
+        self.assertTrue("updated_at" in z.__dict__)
 
     def test_pep8(self):
         """ Function: test_pep8

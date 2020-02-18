@@ -57,10 +57,9 @@ class TestAmenity(unittest.TestCase):
         """
         z = Amenity()
         self.assertTrue(hasattr(z, "name"))
-        self.assertTrue( "id" in z.__dict__)
-        self.assertTrue( "created_at" in z.__dict__)
-        self.assertTrue( "updated_at" in z.__dict__)
-
+        self.assertTrue("id" in z.__dict__)
+        self.assertTrue("created_at" in z.__dict__)
+        self.assertTrue("updated_at" in z.__dict__)
 
     def test_pep8(self):
         """ Function: test_pep8
@@ -91,7 +90,6 @@ class TestAmenity(unittest.TestCase):
     def test_inherit(self):
         j = Amenity()
         self.assertTrue(issubclass(j.__class__, BaseModel), True)
-
 
 
 if __name__ == "__main__":

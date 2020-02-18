@@ -61,10 +61,9 @@ class TestReview(unittest.TestCase):
         self.assertTrue(hasattr(z, "text"))
         self.assertTrue(hasattr(z, "created_at"))
         self.assertTrue(hasattr(z, "updated_at"))
-        self.assertTrue( "id" in z.__dict__)
-        self.assertTrue( "created_at" in z.__dict__)
-        self.assertTrue( "updated_at" in z.__dict__)
-
+        self.assertTrue("id" in z.__dict__)
+        self.assertTrue("created_at" in z.__dict__)
+        self.assertTrue("updated_at" in z.__dict__)
 
     def test_pep8(self):
         """ Function: test_pep8

@@ -3,7 +3,7 @@
 Unittest for Place class
 """
 import unittest
-from models import place 
+from models import place
 from models.place import Place
 from models.base_model import BaseModel
 import pep8
@@ -69,10 +69,9 @@ class TestPlace(unittest.TestCase):
         self.assertTrue(hasattr(z, "amenity_id"))
         self.assertTrue(hasattr(z, "created_at"))
         self.assertTrue(hasattr(z, "updated_at"))
-        self.assertTrue( "id" in z.__dict__)
-        self.assertTrue( "created_at" in z.__dict__)
-        self.assertTrue( "updated_at" in z.__dict__)
-
+        self.assertTrue("id" in z.__dict__)
+        self.assertTrue("created_at" in z.__dict__)
+        self.assertTrue("updated_at" in z.__dict__)
 
     def test_pep8(self):
         """ Function: test_pep8
