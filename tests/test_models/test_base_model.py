@@ -71,6 +71,9 @@ class TestBaseModel(unittest.TestCase):
         self.assertIsInstance(w, BaseModel)
 
     def test_str(self):
+        """ Function: test_str
+                      to test BaseModel Class
+        """
         z = BaseModel()
         stringA = str(z)
         stringB = z.__str__()
