@@ -1,2 +1,2 @@
-# AirBnB CLONE
-# AirBnB clone - console
+# AirBnB clone - Console
+# Project AirBnB
