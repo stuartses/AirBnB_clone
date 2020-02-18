@@ -22,6 +22,10 @@ class TestBaseModel(unittest.TestCase):
         except FileNotFoundError:
             pass
 
+        self.assertTrue(os.access('models/base_model.py', os.R_OK))
+        self.assertTrue(os.access('models/base_model.py', os.W_OK))
+        self.assertTrue(os.access('models/base_model.py', os.X_OK))
+
     def test_doc(self):
         """ Function: test_doc
                       to test if have documentation
