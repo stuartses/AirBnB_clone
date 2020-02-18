@@ -157,7 +157,6 @@ class HBNBCommand(cmd.Cmd):
 
         args_list = shlex.split(arg)
         args_len = len(args_list)
-        print("len: {}". format(args_len))
 
         if args_len == 0:
             print("** class name missing **")
@@ -193,7 +192,11 @@ class HBNBCommand(cmd.Cmd):
             print("** value missing **")
             return
 
-        actual_value = getattr(obj_storage, args_list[2])
+        # Verify if attribute exists, else assign actual_value as input argument
+        try:
+            actual_value = getattr(obj_storage, args_list[2])
+        except AttributeError:
+            actual_value = args_list[3]
 
         # cast value to attribute type
         new_value = type(actual_value)(args_list[3])
