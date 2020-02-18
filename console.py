@@ -3,6 +3,7 @@
 'import modules'
 import cmd
 import sys
+import shlex
 from models import storage
 from models.base_model import BaseModel
 from models.user import User
@@ -154,8 +155,9 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, arg):
         'Updates an instance based on the class name and id by\n'
 
-        args_list = arg.split()
+        args_list = shlex.split(arg)
         args_len = len(args_list)
+        print("len: {}". format(args_len))
 
         if args_len == 0:
             print("** class name missing **")
@@ -197,6 +199,7 @@ class HBNBCommand(cmd.Cmd):
         new_value = type(actual_value)(args_list[3])
 
         setattr(obj_storage, args_list[2], new_value)
+        print(obj_storage)
         storage.save()
 
 
