@@ -192,7 +192,10 @@ class HBNBCommand(cmd.Cmd):
             print("** value missing **")
             return
 
-        # Verify if attribute exists, else assign actual_value as input argument
+        """
+        Verify if attribute exists, else assign actual_value as
+        input argument
+        """
         try:
             actual_value = getattr(obj_storage, args_list[2])
         except AttributeError:
