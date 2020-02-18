@@ -11,7 +11,7 @@ To download this project and use it on your local machine, just follow the next 
 What things you need to use application
 
 ```
-Ubuntu Ubuntu 14.04 LTS
+Ubuntu 14.04 LTS
 Python 3
 ```
 
@@ -33,11 +33,11 @@ $ ./console.py
 #### No interactive mode
 
 ```
-$ echo "<command>" | ./console.py
+$ echo *<command>* | ./console.py
 (hbnb) ....
 ```
 
-Here <command> is any AirBnB console command
+Here *<command>* is any AirBnB console command
 
 ## Commands
 
