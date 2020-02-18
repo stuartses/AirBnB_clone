@@ -14,6 +14,7 @@ from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
 from models.engine.file_storage import FileStorage
+from models.engine import file_storage
 
 
 class TestFileStorage(unittest.TestCase):
@@ -34,6 +35,25 @@ class TestFileStorage(unittest.TestCase):
         style = pep8.StyleGuide(quiet=True)
         p = style.check_files(['models/engine/file_storage.py'])
         self.assertEqual(p.total_errors, 0, "fix pep8")
+
+    def test_doc(self):
+        """ Function: test_doc
+                      to test if have documentation
+        """
+
+        self.assertTrue(len(file_storage.__doc__) > 0)
+        self.assertTrue(len(FileStorage.__doc__) > 0)
+        self.assertTrue(len(FileStorage.new.__doc__) > 0)
+        self.assertTrue(len(FileStorage.all.__doc__) > 0)
+        self.assertTrue(len(FileStorage.reload.__doc__) > 0)
+
+    def test_filestoragepyfile(self):
+        """
+        test file file_storage.py permissions file
+        """
+        self.assertTrue(os.access('models/engine/file_storage.py', os.R_OK))
+        self.assertTrue(os.access('models/engine/file_storage.py', os.W_OK))
+        self.assertTrue(os.access('models/engine/file_storage.py', os.X_OK))
 
     def test_all(self):
         """
