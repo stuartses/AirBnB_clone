@@ -205,7 +205,6 @@ class HBNBCommand(cmd.Cmd):
         new_value = type(actual_value)(args_list[3])
 
         setattr(obj_storage, args_list[2], new_value)
-        print(obj_storage)
         storage.save()
 
 
