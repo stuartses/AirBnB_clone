@@ -40,6 +40,10 @@ class TestBaseModel(unittest.TestCase):
         x = BaseModel()
         x.save()
         self.assertNotEqual(x.created_at, x.updated_at)
+        x2 = BaseModel()
+        x2.save()
+        self.assertNotEqual(x2.created_at, x2.updated_at)
+        self.assertNotEqual(x.updated_at, x2.updated_at)
 
     def test_to_dictMethod(self):
         """ Function: test_to_dictMethod
@@ -87,6 +91,9 @@ class TestBaseModel(unittest.TestCase):
         stringB = z.__str__()
         self.assertTrue(stringA, stringB)
 
+        stringA = "[BaseModel] ({}) {}".format(z.id, z.__dict__)
+        stringB = str(z)
+        self.assertEqual(stringA, stringB)
 
 if __name__ == "__main__":
     unittest.main()
