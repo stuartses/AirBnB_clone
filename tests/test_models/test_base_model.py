@@ -6,6 +6,7 @@ import unittest
 from models import base_model
 from models.base_model import BaseModel
 import pep8
+import os
 
 
 class TestBaseModel(unittest.TestCase):
@@ -13,6 +14,13 @@ class TestBaseModel(unittest.TestCase):
                functions must be inic by test_
                test class name could by named anyway
     """
+    def test_filenotexist(self):
+        a = BaseModel()
+        del a
+        try:
+            os.remove("file.json")
+        except FileNotFoundError:
+            pass
 
     def test_doc(self):
         """ Function: test_doc
