@@ -65,7 +65,7 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, arg):
         'Prints the string representation of an instance based\n'
 
-        args_list = arg.split()
+        args_list = shlex.split(arg)
         args_len = len(args_list)
 
         if args_len == 0:
@@ -96,7 +96,7 @@ class HBNBCommand(cmd.Cmd):
     def do_destroy(self, arg):
         'Deletes an instance based on the class name and id\n'
 
-        args_list = arg.split()
+        args_list = shlex.split(arg)
         args_len = len(args_list)
 
         if args_len == 0:
