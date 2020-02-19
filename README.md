@@ -17,7 +17,7 @@ Python 3
 
 ### Installing
 
-No installation is needed, program es ready to execute
+No installation is needed, program es ready to execute.
 
 ## Running
 
@@ -38,6 +38,15 @@ $ echo *<command>* | ./console.py
 ```
 
 Here *command* is any AirBnB console command
+
+#### To execute test cases
+
+Use Python3 Unittest in main directory
+
+```
+$ python3 -m unittest discover tests
+```
+
 
 ## Commands
 
@@ -154,8 +163,8 @@ The program have this Class and Public attributes that can be used by console.
 ### BaseModel
 
 * id: unique id created by _uuid_. This is made by the program.
-* created_at: creation date. This is made by the program.
-* updated_at: update date. This is made by the program
+* created_at: creation date. This is made by the program, and write date when a new instance is created.
+* updated_at: update date. This is made by the program, and write the date by data change.
 
 ### User
 Inherits from BaseModel Class.
