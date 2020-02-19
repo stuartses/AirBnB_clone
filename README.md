@@ -37,11 +37,11 @@ $ echo *<command>* | ./console.py
 (hbnb) ....
 ```
 
-Here *<command>* is any AirBnB console command
+Here *command* is any AirBnB console command
 
 ## Commands
 
-#### 0. help
+### 0. help
 
 Allows to see more information about commands (Built-in of Cmd Module in Python).
 
@@ -59,7 +59,7 @@ Documented commands (type help <topic>):
 EOF  all  create  destroy  help  quit  show  update
 ```
 
-#### 1. quit
+### 1. quit
 
 Exit the program. This could be done by use EOF (CTRL + D), too.
 
@@ -68,7 +68,7 @@ Exit the program. This could be done by use EOF (CTRL + D), too.
 (hbtn) quit
 ```
 
-#### 3. create
+### 3. create
 
 Creates a new instance of a Class and prints id. And update in json file.
 
@@ -83,7 +83,7 @@ Creates a new instance of a Class and prints id. And update in json file.
 4606c9f9-d23b-4327-9597-7668a769a872
 ```
 
-#### 4. show
+### 4. show
 
 Prints the string representation of an instance based on the class name and id.
 
@@ -98,7 +98,7 @@ Prints the string representation of an instance based on the class name and id.
 [BaseModel] (4606c9f9-d23b-4327-9597-7668a769a872) {'id': '4606c9f9-d23b-4327-9597-7668a769a872', 'created_at': datetime.datetime(2020, 2, 18, 17, 0, 0, 141314), 'updated_at': datetime.datetime(2020, 2, 18, 17, 0, 0, 141364)}
 ```
 
-#### 5. destroy
+### 5. destroy
 
 Deletes an instance based on the class name and id. Update de json file.
 
@@ -113,7 +113,7 @@ Deletes an instance based on the class name and id. Update de json file.
 (hbtn) 
 ```
 
-#### 6. all
+### 6. all
 
 Prints all string representation of all instances based or not on the class name.
 
@@ -133,7 +133,7 @@ To see all instances in a specific Class
 ["[City] (478bda10-e48c-4090-bfaa-7c181fd54e3b) {'id': '478bda10-e48c-4090-bfaa-7c181fd54e3b', 'created_at': datetime.datetime(2020, 2, 18, 17, 18, 17, 565443), 'updated_at': datetime.datetime(2020, 2, 18, 17, 18, 17, 565481)}"]
 ```
 
-#### 7. update
+### 7. update
 
 Updates an instance based on the class name and id by adding or updating attribute. Update the json file.
 
@@ -149,42 +149,41 @@ Updates an instance based on the class name and id by adding or updating attribu
 
 ## Class Included
 
-The program have this Class that can be used by console.
+The program have this Class and Public attributes that can be used by console.
 
-#### BaseModel
+### BaseModel
 
-**Public atributes:** 
 * id: unique id created by _uuid_. This is made by the program.
 * created_at: creation date. This is made by the program.
 * updated_at: update date. This is made by the program
 
-#### User
+### User
 Inherits from BaseModel Class.
-**Public atributes:** 
+
 * email: string.
 * password: string.
 * first_name: string.
 * last_name: string.
 
-#### State
+### State
 Inherits from BaseModel Class.
-**Public atributes:** 
+
 * name: string.
 
-#### City
+### City
 Inherits from BaseModel Class.
-**Public atributes:** 
+
 * state_id: string.
 * name: string.
 
-#### Amenity
+### Amenity
 Inherits from BaseModel Class.
-**Public atributes:** 
+
 * name: string.
 
-#### Place
+### Place
 Inherits from BaseModel Class.
-**Public atributes:** 
+
 * city_id: string.
 * user_id: string.
 * name: string.
@@ -197,9 +196,9 @@ Inherits from BaseModel Class.
 * longitude: float.
 * amenity_ids: list of string.
 
-#### Review
+### Review
 Inherits from BaseModel Class.
-**Public atributes:** 
+
 * place_id: string.
 * user_id: string.
 * text: string.
@@ -211,5 +210,5 @@ Inherits from BaseModel Class.
 
 See also the list of [AUTHORS](https://github.com/stuartses/AirBnB_clone/blob/master/AUTHORS) who participated in this project.
 
-### Date
+## Date
 This project was uploaded on: Feb 18, 2020
