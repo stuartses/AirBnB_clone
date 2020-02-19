@@ -1,6 +1,14 @@
 #!/usr/bin/python3
 
-'import modules'
+"""AirBnB Clone - Console
+This module creates a command interpreter to AirBnb Clone
+Uses the cmd module
+
+Holberton School
+Foundations - Higher-level programming - Python
+By Iván Darío Lasso and Stuart Echeverry
+"""
+
 import cmd
 import sys
 import shlex
@@ -12,16 +20,6 @@ from models.state import State
 from models.city import City
 from models.amenity import Amenity
 from models.review import Review
-
-
-"""AirBnB Clone - Console
-This module creates a command interpreter to AirBnb Clone
-Uses the cmd module
-
-Holberton School
-Foundations - Higher-level programming - Python
-By Iván Darío Lasso and Stuart Echeverry
-"""
 
 
 class HBNBCommand(cmd.Cmd):
