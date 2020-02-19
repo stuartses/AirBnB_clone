@@ -1,34 +1,55 @@
 #!/usr/bin/python3
+
+"""Module: file_storage
+This module defines the FileStorage Class to AirBnB project.
+Used to access and edit a JSON file
+
+Args:
+    obj (obj): input instance of object used to create a new in dictionary
+
+Atributes:
+    __file_path (str): path to the JSON file (ex: file.json)
+    __objects (dict): store all objects by <class name>.id
+
 """
-module: file_storage
-serializa and deserealiza json files
-"""
+
 
 import json
 
 
 class FileStorage():
+    """Class FileStorage
+    Serializes an instance objects to a json file and deseralizes
+    json file to a instance objects.
+
+    Args:
+        obj (obj): input object used to create a new in a dictionary
+
+    Atributes:
+        __file_path (str): path to the JSON file (ex: file.json)
+        __objects (dict): store all objects by <class name>.id
+
     """
-    class: FileStorage
-    Serializa instance objects to a json file and deseraliza
-    json file to a instance objects
-    """
+
     __file_path = "file.json"
     __objects = {}
 
     def all(self):
-        """"
-        Function: all
-        return all objects stored in __objects dict
+        """Show all objects stored in __objects dict
+
+        Return:
+            __objects: dictionary with all data
+
         """
 
         return self.__objects
 
     def new(self, obj):
-        """
-        Function: new
-        create new key in the __object
+        """Creates a new key in the __object
         dict(<class name>.uuid-->instance object)
+
+        Args:
+            obj: input object used to create a new element __objects
         """
 
         new_classname = obj.__class__.__name__
@@ -37,10 +58,10 @@ class FileStorage():
         self.__objects[new_key] = obj
 
     def save(self):
+        """Save new date in a instance of a Class
+        serializes objects in __object dict to a json file
         """
-        Function: save
-        serializa objects in __object dict to a json file
-        """
+
         # creates dictionary
         # __object key:-->to_dict of BaseModel
         obj_dic = {}
@@ -50,10 +71,9 @@ class FileStorage():
             f.write(json.dumps(obj_dic))
 
     def reload(self):
-        """
-        Function: reload
-        deseriaiza json file to a objects in __object dict
-        only if file exist
+        """Read JSON File
+        deserializes a json file to a objects in __object dict
+        only if file exist and based on Class Name
         """
 
         try:
