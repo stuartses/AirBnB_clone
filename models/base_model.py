@@ -1,5 +1,19 @@
 #!/usr/bin/python3
-""" Module: base_model """
+
+"""Module: base_model
+This module defines the BaseModel Class to AirBnB project.
+
+Atributes:
+    id (str): assign with an uuid when an instance is created
+    created_at (datetime): assign with the current datetime
+                           when an instance is created
+    updated_at (datetime): assign with the current datetime when
+                           an instance is created and it will be
+                           updated every time you change your object
+
+"""
+
+
 from datetime import datetime
 import uuid
 
@@ -7,10 +21,31 @@ from models import storage
 
 
 class BaseModel:
-    """ Class: BaseModel"""
+    """Class BaseModel
+    BaseModel is the principal class to operate program
+    Here the id and date are generated.
+
+    Args:
+        *args: list of data to create or modify an instance
+        **kwargs: dictionary of data to create or modify an instance
+
+    Atributes:
+        id (str): assign with an uuid when an instance is created
+        created_at (datetime): assign with the current datetime
+                               when an instance is created
+        updated_at (datetime): assign with the current datetime when
+                               an instance is created and it will be
+                               updated every time you change your object
+    """
+
     def __init__(self, *args, **kwargs):
-        """ Function: __init__
+        """Initializes a instance os BaseModel
+
+        Args:
+            *args: list of data to create or modify an instance
+            **kwargs: dictionary of data to create or modify an instance
         """
+
         if kwargs:
             for i in kwargs.items():
                 val = i[1]
@@ -27,24 +62,28 @@ class BaseModel:
             storage.new(self)
 
     def __str__(self):
-        """ Function: __str__
+        """Replace the Method __str__
         """
         return "[{}] ({}) {}".format(self.__class__.__name__,
                                      self.id, str(self.__dict__))
 
     def save(self):
-        """ Function: save
-            Descripcion:update updated_at instance atrib with current time
+        """Update instance with new current time
         """
+
         self.updated_at = datetime.now()
         storage.save()
 
     def to_dict(self):
-        """ Function: to_dict
-            Descripcion: return dict of a instance object, add __class__ key
-                         with the name of the class (BaseModel) and change to
-                         a isoformat to created and updated attribs
+        """Return dict of a instance object, add __class__ key
+        with the name of the class (BaseModel) and change to
+        a isoformat to created and updated attribs
+
+        Return:
+            dictionary: dictionary of a instance object
+
         """
+
         dictionary = dict(**self.__dict__)
         dictionary["__class__"] = self.__class__.__name__
         dictionary["created_at"] = self.created_at.isoformat()
