@@ -26,27 +26,60 @@ By Iván Darío Lasso and Stuart Echeverry
 
 class HBNBCommand(cmd.Cmd):
     """Class HBNBCommand
-    Creates a command interpreter
+
+    Creates a command interpreter by Air BnB Clone
+
+    Args:
+        arg (str): Human readable string that is used by console
+                   to do some action.
+
+    Attributes:
+        prompt (str): Built-in attribute of Cmd Class that allows
+                      to write a personal prompt text.
+        intro (str): Built-in atribute of Cmd class that allows
+                     to write a personal wellcome text.
     """
 
     # intro = 'Welcome to AirBnB Console.\nType \'help\' to see options.\n'
     prompt = '(hbnb) '
 
     def emptyline(self):
-        # when type empty line
+        """
+        This function is executed when user type ENTER without any argument
+        """
+
         pass
 
     def do_quit(self, arg):
-        'Quit command to exit the program\n'
+        """
+        Command to quit and exit the Console.
+
+        Use: quit
+        """
+
         return True
 
     def do_EOF(self, arg):
-        'Quit command to exit the program\n'
+        """
+        Command to quit and exit the Console by EOF (CTRL + D).
+        """
+
         print()
         return True
 
     def do_create(self, arg):
-        'Creates a new instance of BaseModel, saves it (to the JSON file)\n'
+        """
+        Creates a new instance of a ClassName and saves it (to the JSON file)
+        and return the id of the new instance.
+
+        Use: create <class name>
+        Ex: create BaseModel
+
+        Args:
+            arg (str): Name of the class to create instance
+                       (BaseModel, User, State, City, Amenity, Place, Review).
+
+        """
 
         if (arg == ""):
             print("** class name missing **")
@@ -63,7 +96,17 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_show(self, arg):
-        'Prints the string representation of an instance based\n'
+        """
+        Prints the string representation of an instance based in class
+        and instance id.
+
+        Use: show <class name> <id>
+        Ex: show BaseModel b9132a3f-0ffd-49df-950d-7b257dcddbc7
+
+           Args:
+               arg (str): The name of the class and id, separated by space
+
+        """
 
         args_list = shlex.split(arg)
         args_len = len(args_list)
@@ -94,7 +137,17 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_destroy(self, arg):
-        'Deletes an instance based on the class name and id\n'
+        """
+        Deletes an instance based on the class name and id.
+        And update JSON File.
+
+        Use: destroy <class name> <id>
+        Ex: destroy BaseModel b9132a3f-0ffd-49df-950d-7b257dcddbc7
+
+        Args:
+            arg (str): The name of the class and id, separated by space.
+
+        """
 
         args_list = shlex.split(arg)
         args_len = len(args_list)
@@ -126,7 +179,18 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_all(self, arg):
-        'Prints all string representation of all instances\n'
+        """
+        Prints all string representation of all instances
+        based or not on the class name.
+
+        Use: all <class name> (optional)
+        Ex: all              # This prints all instances of all classes
+            all BaseModel    # This prints all instances of BaseModel
+
+        Args:
+            arg (str): Name of the class
+
+        """
 
         str_list = []
 
@@ -153,7 +217,17 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
 
     def do_update(self, arg):
-        'Updates an instance based on the class name and id by\n'
+        """
+        Updates an instance based on the class name, id and attributes.
+
+        Use: update <class name> <id> <attribute name> "<attribute value>"
+        Ex: update User 49faff9a-6318-451f-87b6-910505c55907 first_name "Betty"
+
+        Args:
+            arg (str): The name of the class, id, attrubute and
+                       value separated by space.
+
+        """
 
         args_list = shlex.split(arg)
         args_len = len(args_list)
