@@ -46,7 +46,8 @@ Use Python3 Unittest in main directory
 ```
 $ python3 -m unittest discover tests
 ```
-
+## Flowchart
+![Flow chart](ConsoleFlowChart.png)
 
 ## Commands
 
