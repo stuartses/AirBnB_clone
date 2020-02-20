@@ -279,6 +279,21 @@ class HBNBCommand(cmd.Cmd):
         setattr(obj_storage, args_list[2], new_value)
         storage.save()
 
+    def do_count(self, arg):
+
+        args_list = arg.split(".")
+        count = 0
+        for i in storage.all().items():
+            if type(i[1]).__name__ == args_list[0]:
+                count += 1
+        print(count)
+
+    def default(self, arg):
+        met = arg.split(".")
+        if len(met) > 1: 
+            if met[1] == "count()":
+                eval("self.do_count(arg)")
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
