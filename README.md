@@ -108,6 +108,16 @@ Prints the string representation of an instance based on the class name and id.
 [BaseModel] (4606c9f9-d23b-4327-9597-7668a769a872) {'id': '4606c9f9-d23b-4327-9597-7668a769a872', 'created_at': datetime.datetime(2020, 2, 18, 17, 0, 0, 141314), 'updated_at': datetime.datetime(2020, 2, 18, 17, 0, 0, 141364)}
 ```
 
+**To use it in object format**
+```
+(hbtn) <classname>.show(<id>)
+```
+
+**Example**
+```
+(hbtn) User.show(4606c9f9-d23b-4327-9597-7668a769a872)
+```
+
 ### 5. destroy
 
 Deletes an instance based on the class name and id. Update de json file.
@@ -121,6 +131,16 @@ Deletes an instance based on the class name and id. Update de json file.
 ```
 (hbtn) destroy BaseModel 4606c9f9-d23b-4327-9597-7668a769a872
 (hbtn) 
+```
+
+**To use it in object format**
+```
+(hbtn) <classname>.destroy(<id>)
+```
+
+**Example**
+```
+(hbtn) User.destroy(40cbbf9c-3ca9-44d6-ad0e-14a12e106015)
 ```
 
 ### 6. all
@@ -143,6 +163,17 @@ To see all instances in a specific Class
 ["[City] (478bda10-e48c-4090-bfaa-7c181fd54e3b) {'id': '478bda10-e48c-4090-bfaa-7c181fd54e3b', 'created_at': datetime.datetime(2020, 2, 18, 17, 18, 17, 565443), 'updated_at': datetime.datetime(2020, 2, 18, 17, 18, 17, 565481)}"]
 ```
 
+**To use it in object format**
+```
+(hbtn) <classname>.all()
+```
+
+**Example**
+```
+(hbtn) User.all()
+```
+
+
 ### 7. update
 
 Updates an instance based on the class name and id by adding or updating attribute. Update the json file.
@@ -152,9 +183,18 @@ Updates an instance based on the class name and id by adding or updating attribu
 (hbtn) update <class name> <id> <attribute name> "<attribute value>"
 ```
 
+### 8. count
+
+Count the number of instances in a Class
+
+**Use:**
+```
+(hbtn) <class name>.count()
+
 **Example:**
 ```
-(hbnb) update City 478bda10-e48c-4090-bfaa-7c181fd54e3b name "Cali"
+(hbnb) User.count()
+2
 ```
 
 ## Class Included
