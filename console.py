@@ -279,7 +279,17 @@ class HBNBCommand(cmd.Cmd):
         setattr(obj_storage, args_list[2], new_value)
         storage.save()
 
-    def do_count(self, arg):
+    def count(self, arg):
+        """
+        Count and prints all instance off a class name.
+
+        Use: count(<class name>)
+        Ex: count(arg) where arg is User class ("User")
+
+        Args:
+            arg (str): The name of the class
+
+        """
 
         args_list = arg.split(".")
         count = 0
@@ -289,10 +299,22 @@ class HBNBCommand(cmd.Cmd):
         print(count)
 
     def default(self, arg):
+        """
+        execute when command doesnt exist.
+        Ex: User.count() its not do_XXX funtion, then default logical
+            is excecuted and eval if it is count instance requirement.
+        Ex: User.all() its not do_XXX funtion, then default logical
+            is excecuted and eval if it is all display user instance
+            requirement.
+        Args: string could be <class name>.funcion where function referes to
+              an expecific propose(see Ex.)
+        """
         met = arg.split(".")
-        if len(met) > 1: 
+        if len(met) > 1:
             if met[1] == "count()":
-                eval("self.do_count(arg)")
+                self.count(arg)
+            if met[1] == "all()":
+                eval("self.do_all(met[0])")
 
 
 if __name__ == '__main__':
