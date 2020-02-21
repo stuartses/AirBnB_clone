@@ -320,6 +320,11 @@ class HBNBCommand(cmd.Cmd):
                 argconsole = met[0] + " " + id
                 print(argconsole)
                 eval("self.do_show(argconsole)")
+            if "destroy" in met[1]:
+                id = met[1].split('(', 1)[1].split(')')[0]
+                argconsole = met[0] + " " + id
+                print(argconsole)
+                eval("self.do_destroy(argconsole)")
 
 
 if __name__ == '__main__':
