@@ -190,6 +190,7 @@ Count the number of instances in a Class
 **Use:**
 ```
 (hbtn) <class name>.count()
+```
 
 **Example:**
 ```
