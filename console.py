@@ -315,6 +315,11 @@ class HBNBCommand(cmd.Cmd):
                 self.count(arg)
             if met[1] == "all()":
                 eval("self.do_all(met[0])")
+            if "show" in met[1]:
+                id = met[1].split('(', 1)[1].split(')')[0]
+                argconsole = met[0] + " " + id
+                print(argconsole)
+                eval("self.do_show(argconsole)")
 
 
 if __name__ == '__main__':
