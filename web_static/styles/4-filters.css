@@ -9,7 +9,6 @@
     border: 1px solid #DDDDDD;
     border-radius: 4px;;
     text-align: center;
-    position: relative;
 }
 
 section.filters button {
@@ -20,9 +19,8 @@ section.filters button {
     width: 20%;
     border-radius: 4px;
     border: 0;
-    position: absolute;
-    top: 11px;
-    right: 30px;
+    margin: 11px 30px 0;
+    float: right;
 }
 
 section.filters button:hover {
