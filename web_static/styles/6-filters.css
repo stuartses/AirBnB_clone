@@ -10,6 +10,7 @@
     width: 100%;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
+    display: block;
 }
 
 section.filters button {
@@ -28,37 +29,56 @@ section.filters button:hover {
     opacity: 90%;
 }
 
-section.filters .locations {
+.locations {
     height: 100%;
     width: 25%;
     display: inline-block;
     border-right: 1px solid #DDDDDD;
+    position: relative;
+    float: left;
 }
 
-section.filters .amenities {
+.amenities {
     height: 100%;
     width: 25%;
     display: inline-block;
+    position: relative;
+    float: left;
 }
 
 .locations h3, .amenities h3 {
     font-weight: 600;
-    margin: 15px 0 0 50px;
+    padding-left: 50px;
+    margin-bottom: 0;
 }
 
 .locations h4, .amenities h4 {
     font-weight: 400;
     font-size: 14px;
-    margin: 3px 0 0 50px;
+    padding-left: 50px;
+    margin-top: 6px;
 }
 
 .popover {
-    display: inline-block;
+    display: block;
     background-color: #FAFAFA;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
     width: 100%;
+    position: absolute;
+    left: 0;
+    top: 70px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 0 30px;
 }
+
+.popover ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 
 .popover h2 {
     font-size: 16px;
