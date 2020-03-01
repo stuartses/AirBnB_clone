@@ -4,6 +4,7 @@
    Air BnB Clone project
 */
 
+/* Body Styles*/
 body {
     margin: 0;
     padding:0;
@@ -12,6 +13,7 @@ body {
     font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+/* Container of the content */
 .container {
     max-width: 1000px;
     margin: 30px auto 30px auto;
