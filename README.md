@@ -1,4 +1,4 @@
-# AirBnB clone - The console
+# Console to manage the AirBnB clone
 
 Console to manage objects and data storage. Developed in Python 3 for Holberton School by cohort10 students.
 
