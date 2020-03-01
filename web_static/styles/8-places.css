@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+/* Place styles
+   Air BnB clone project
+*/
+
+/* places container */
+.places {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+/* Principal Title */
+.places h1 {
+    font-size: 30px;
+    top: 0;
+    text-align: left;
+}
+
+/* Each places */
+.places article {
+    width: 390px;
+    height: 300px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px #FF5A5F solid;
+    border-radius: 4px;
+    position: relative;
+    display: inline-table;
+}
+
+/* Title of each place */
+.places article h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+/* Circle with price  */
+.price_by_night {
+    color: #FF5A5F;
+    border: 4px #FF5A5F solid;
+    border-radius: 50%;
+    min-width: 60px;
+    height: 60px;
+    font-size: 30px;
+    right: 10px;
+    top: 10px;
+    text-align: center;
+    position: absolute;
+}
+
+/* Text inside circle with price  */
+.price_by_night p {
+    padding: 12px 0 0 0;
+    margin: 0;
+}
+
+/* Information box in each place  */
+.information {
+    height: 80px;
+    border-top: 1px #DDDDDD solid;
+    border-bottom: 1px #DDDDDD solid;
+    text-align: center;
+    position: relative;
+}
+
+/* Icon with Guest information  */
+.max_guest {
+    width: 100px;
+    height: 50px;
+    background-image: url("../images/icon_group.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    text-align: center;
+    padding-top: 50px;
+    display: inline-block;
+}
+
+/* Icon with number of rooms information  */
+.number_rooms {
+    width: 100px;
+    height: 50px;
+    background-image: url("../images/icon_bed.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    text-align: center;
+    padding-top: 50px;
+    display: inline-block;
+}
+
+/* Icon with number of bathrooms information  */
+.number_bathrooms {
+    width: 100px;
+    height: 50px;
+    background-image: url("../images/icon_bath.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    text-align: center;
+    padding-top: 50px;
+    display: inline-block;
+}
+
+/* Information about user  */
+.user {
+    text-align: left;
+    padding-top: 20px;
+}
+
+/* Description of the place  */
+.description {
+    text-align: left;
+    padding-top: 10px;
+}
